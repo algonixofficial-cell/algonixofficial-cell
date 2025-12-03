@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HTML A–Z — Interactive Course</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans',sans-serif;margin:0;padding:0;background:#f7f7fb;color:#111}
+    header{background:#0b74de;color:white;padding:20px}
+    main{max-width:980px;margin:24px auto;padding:20px;background:white;border-radius:12px;box-shadow:0 6px 24px rgba(10,10,10,0.08)}
+    h1,h2{margin:6px 0}
+    pre{background:#0f1724;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}
+    code{background:#eef2ff;padding:2px 6px;border-radius:6px}
+    section{margin-top:18px}
+    .exercise{background:#fffbe6;border-left:4px solid #f59e0b;padding:12px;border-radius:6px}
+    .hint{font-size:0.9rem;color:#555}
+    nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    a.btn{display:inline-block;padding:8px 12px;background:#111827;color:white;border-radius:8px;text-decoration:none}
+    footer{font-size:0.9rem;color:#666;margin-top:18px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML A–Z — Interactive Course</h1>
+    <p>Shuru theke practice porjonto — step-by-step. (Bangla + examples)</p>
+  </header>
+  <main>
+    <nav>
+      <a class="btn" href="#intro">Intro</a>
+      <a class="btn" href="#structure">Structure</a>
+      <a class="btn" href="#text">Text & Headings</a>
+      <a class="btn" href="#media">Images & Media</a>
+      <a class="btn" href="#links">Links & Navigation</a>
+      <a class="btn" href="#forms">Forms</a>
+      <a class="btn" href="#semantics">Semantic Tags</a>
+      <a class="btn" href="#css">Intro to CSS</a>
+      <a class="btn" href="#js">Intro to JavaScript</a>
+      <a class="btn" href="#projects">Projects</a>
+    </nav>
+
+    <section id="intro">
+      <h2>1. HTML কী? (Short)</h2>
+      <p>HTML = <strong>HyperText Markup Language</strong>. Web page-er structure define kore — content gula ke tags diye mark up kore. CSS style dey, JavaScript interaction dey.</p>
+      <div class="exercise">
+        <strong>Exercise 1:</strong> নীচের সিম্পল HTML ফাইলটি কপি করে আপনার কম্পিউটারে <code>index.html</code> নামে সেভ করে ব্রাউজারে খুলুন।
+      </div>
+      <pre>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My first page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;p&gt;Ami HTML shikhchi.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    </section>
+
+    <section id="structure">
+      <h2>2. Basic structure</h2>
+      <p>Pratyek HTML dokument-er main parts: <code>&lt;!doctype&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</p>
+      <ul>
+        <li><code>&lt;head&gt;</code> — meta, title, link to CSS, fonts.</li>
+        <li><code>&lt;body&gt;</code> — visible content (headings, paragraphs, images...).</li>
+      </ul>
+      <div class="exercise">
+        <strong>Exercise 2:</strong> title, meta name="description" যোগ করুন।
+      </div>
+    </section>
+
+    <section id="text">
+      <h2>3. Text, headings, paragraphs & lists</h2>
+      <p>Headings: <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>. Paragraphs: <code>&lt;p&gt;</code>. Lists: ordered <code>&lt;ol&gt;</code> এবং unordered <code>&lt;ul&gt;</code> এবং list item <code>&lt;li&gt;</code>.</p>
+      <pre>&lt;h1&gt;Main title&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    </section>
+
+    <section id="media">
+      <h2>4. Images & media</h2>
+      <p>Image tag: <code>&lt;img src="..." alt="..."&gt;</code> — <strong>alt</strong> important for accessibility. Video and audio tags exist too.</p>
+      <pre>&lt;img src="sunflower.jpg" alt="Sunflower" width="400"&gt;
+
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Your browser doesn't support video tag.
+&lt;/video&gt;
+</pre>
+    </section>
+
+    <section id="links">
+      <h2>5. Links & navigation</h2>
+      <p>Anchor tag: <code>&lt;a href="URL"&gt;Link text&lt;/a&gt;</code>. Internal link uses fragment (#id).</p>
+      <pre>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;Visit example&lt;/a&gt;
+&lt;a href="#projects"&gt;Jump to projects&lt;/a&gt;
+</pre>
+    </section>
+
+    <section id="forms">
+      <h2>6. Forms — user input</h2>
+      <p>Form tag with inputs, labels, select, textarea, button. Always pair <code>&lt;label for="id"&gt;</code> with inputs for accessibility.</p>
+      <pre>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name" type="text" required&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+      <div class="exercise">
+        <strong>Exercise 3:</strong> Create a contact form with name, email, message and a submit button. Try pressing submit (it will attempt to post — that's fine).
+      </div>
+    </section>
+
+    <section id="semantics">
+      <h2>7. Semantic HTML</h2>
+      <p>Use proper tags for better structure and accessibility: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</p>
+    </section>
+
+    <section id="css">
+      <h2>8. Intro to CSS (quick)</h2>
+      <p>CSS adds style. Add with <code>&lt;style&gt;</code> in head or external <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</p>
+      <pre>&lt;style&gt;
+  body{font-family:Arial}
+  h1{color:darkblue}
+&lt;/style&gt;
+</pre>
+      <p class="hint">Practice: change font-size, colors, spacing.</p>
+    </section>
+
+    <section id="js">
+      <h2>9. Intro to JavaScript (quick)</h2>
+      <p>JS makes pages interactive. Add with <code>&lt;script&gt;</code>. Example below shows a click handler.</p>
+      <pre>&lt;button id="btn"&gt;Click me&lt;/button&gt;
+&lt;script&gt;
+  document.getElementById('btn').addEventListener('click', function(){
+    alert('Hello!')
+  })
+&lt;/script&gt;
+</pre>
+    </section>
+
+    <section id="projects">
+      <h2>10. Small projects (practice)</h2>
+      <ol>
+        <li>Personal profile page (photo, bio, links)</li>
+        <li>To‑do list (HTML + JS)</li>
+        <li>Mini blog layout — use semantic tags</li>
+        <li>Contact form that validates email with JS</li>
+      </ol>
+      <div class="exercise">
+        <strong>Capstone:</strong> Make a simple 1‑page personal site with header, about section, gallery (images), and contact form. Share the HTML here and I'll review.
+      </div>
+    </section>
+
+    <section id="cheatsheet">
+      <h2>Cheat sheet — common tags</h2>
+      <p><code>&lt;a&gt; &lt;img&gt; &lt;h1&gt;-&lt;h6&gt; &lt;p&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;div&gt; &lt;span&gt; &lt;form&gt; &lt;input&gt; &lt;label&gt; &lt;button&gt; &lt;table&gt;</code></p>
+    </section>
+
+    <footer>
+      <p>Ready to start? If you want, I can teach you lesson-by-lesson, give instant exercises, or review your code. — Alisha</p>
+    </footer>
+  </main>
+</body>
+</html>
